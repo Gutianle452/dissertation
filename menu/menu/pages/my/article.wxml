@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="tui-cells">
+       <textarea class="tui-textarea" value="{{name}}"  bindinput="nameinput"name="desc" placeholder="标题" maxlength="120" placeholder-class="tui-phcolor-color" auto-focus/>
+   
+  </view>
+    <view class="tui-cells">
+       <textarea class="tui-textarea" value="{{content}}"  bindinput="input"name="desc" placeholder="内容" maxlength="500" placeholder-class="tui-phcolor-color" auto-focus/>
+    <view class="tui-textarea-counter"></view>
+  </view>
+   <view class="tui-enclosure">
+  
+    <tui-icon name="picture" size="25" class="tui-mr" bindtap="upload"></tui-icon>
+     <image src="{{imagesrc}}"></image>
+  </view>
+  <view class="tui-cmt-btn">
+      <tui-button tui-button-class="tui-btn-inner"bindtap="protocol" >发表</tui-button>
+  </view>
+</view>

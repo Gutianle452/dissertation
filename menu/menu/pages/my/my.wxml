@@ -1,0 +1,59 @@
+<!--pages/my/my.wxml-->
+<view class='container'>
+  <view class='top-container'>
+    <image class='bg-img' src='../../static/images/my/mine_bg_3x.png'></image>
+    <view bindtap='logout' class='logout' hover-class="opcity" hover-stay-time="150" >
+      <image class='logout-img' src='../../static/images/my/icon_out_3x.png' hidden='{{!isLogin}}'></image>
+      <text class='logout-txt' hidden='{{!isLogin}}'>退出</text>
+    </view>
+    <view hidden='{{!isLogin}}' class='user-wrapper'>
+      <navigator   hover-class="opcity" hover-stay-time="150" class='user'>
+        <image class='avatar-img' src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLib7icZuiaQWLJqicRtO7sdcSa7XVnIfMbjvFmnGiaYBGwPcwJmPyteDnpib7mibBSuomFl9pujiaicDueWAw/132'></image>
+        <text class='user-info-mobile'>{{memberName}}</text>
+      </navigator>
+    </view>
+ 
+  </view>
+
+ 
+  
+
+  <view class='bottom-container'>
+  <view class='ul-item'>
+    <view bindtap='tapEvent' data-index="1"  data-key='我的信息' class='item' hover-class="opcity" hover-stay-time="150">
+      <image class='item-img' src='../../static/images/edit.png'></image>
+      <text class='item-name'>我的信息</text>
+    </view>
+    <view bindtap='tapEvent' data-index="2" data-key='我的收藏'  class='item' hover-class="opcity" hover-stay-time="150">
+      <image class='item-img' src='../../static/images/likes.png'></image>
+      <text class='item-name'>我的收藏</text>
+    </view>
+    <view bindtap='tapEvent' data-index="3" data-key='我的评论' class='item' hover-class="opcity" hover-stay-time="150">
+      <image class='item-img' src='../../static/images/ccomment.png'></image>
+      <text class='item-name'>我的评论</text>
+    </view>
+      <view bindtap='tapEvent' data-index="4" data-key='我的点赞' class='item' hover-class="opcity" hover-stay-time="150">
+      <image class='item-img' src='../../static/images/zan.png'></image>
+      <text class='item-name'>我的点赞</text>
+    </view>
+  </view>
+  
+  <view class='ul-item'>
+    <view bindtap='tapEvent' data-index="5"  data-key='我的文章' class='item' hover-class="opcity" hover-stay-time="150">
+      <image class='item-img' src='../../static/images/article.png'></image>
+      <text class='item-name'>我的文章</text>
+    </view>
+    <view bindtap='tapEvent' data-index="6" data-key='上传文章'  class='item' hover-class="opcity" hover-stay-time="150">
+      <image class='item-img' src='../../static/images/upload.png'></image>
+      <text class='item-name'>上传文章</text>
+    </view>
+    <view bindtap='tapEvent' data-index="" data-key='上传文章'  class='item' hover-class="opcity" hover-stay-time="150">
+    
+    </view>
+     <view bindtap='tapEvent' data-index="" data-key='上传文章'  class='item' hover-class="opcity" hover-stay-time="150">
+    
+    </view>
+  </view>
+    
+  </view>
+</view>

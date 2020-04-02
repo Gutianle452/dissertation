@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="tui-cells">
+    <textarea class="tui-textarea" value="{{content}}"  bindinput="input"name="desc" placeholder="发表你的评论..." maxlength="500" placeholder-class="tui-phcolor-color" auto-focus/>
+    <view class="tui-textarea-counter"></view>
+  </view>
+  <view class="tui-enclosure">
+ 
+  </view>
+  <view class="tui-cmt-btn">
+      <tui-button tui-button-class="tui-btn-inner"bindtap="protocol" >发表</tui-button>
+  </view>
+</view>

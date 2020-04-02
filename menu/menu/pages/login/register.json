@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "注册",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "tui-list-cell":"/components/list-cell/list-cell"
+  }
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ye.modules.cus.dao.MenuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.ye.modules.cus.entity.MenuEntity" id="menuMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="content" column="content"/>
+        <result property="pic" column="pic"/>
+        <result property="createTime" column="create_time"/>
+        <result property="categoryId" column="category_id"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="com.ye.modules.cus.entity.MenuEntity">
+		select * from t_menu where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="com.ye.modules.cus.entity.MenuEntity">
+	 
+			select a.*,u.name as category  from t_menu a inner join t_category u on a.category_id =u.id 
+	
+		<where>
+			<if test="name != null and name.trim() != ''">
+				and  a.`name` like concat('%',#{name},'%')
+			</if>
+ 	<if test="categoryId != null  ">
+				and  a.`category_id`=#{categoryId} 
+			</if>
+		</where>
+		
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id asc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from t_menu 
+		<where>
+			<if test="name != null and name.trim() != ''">
+				and  `name` like concat('%',#{name},'%')
+			</if>
+  	<if test="categoryId != null  ">
+				and  `category_id`=#{categoryId} 
+			</if>
+		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.ye.modules.cus.entity.MenuEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into t_menu
+		(
+			`name`, 
+			`content`, 
+			`pic`, 
+			`create_time`, 
+			`category_id`
+		)
+		values
+		(
+			#{name}, 
+			#{content}, 
+			#{pic}, 
+			#{createTime}, 
+			#{categoryId}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.ye.modules.cus.entity.MenuEntity">
+		update t_menu 
+		<set>
+			<if test="name != null">`name` = #{name}, </if>
+			<if test="content != null">`content` = #{content}, </if>
+			<if test="pic != null">`pic` = #{pic}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="categoryId != null">`category_id` = #{categoryId}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from t_menu where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from t_menu where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

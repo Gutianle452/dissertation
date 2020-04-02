@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="tui-bg-box">
+    <image src="../../static/images/login/bg_login.png" class="tui-bg-img"></image>
+    <image src="../../static/images/my/mine_def_touxiang_3x.png" class="tui-photo"></image>
+    <view class="tui-login-name">菜谱</view>
+  </view>
+  <form bindsubmit="login">
+    <view class="tui-login-from">
+      <view class="tui-line-cell">
+        <tui-icon name="mobile" size="20" color='#5677fc'></tui-icon>
+        <input placeholder-class="phcolor" class="tui-input" name="username" placeholder="请输入用户名" bindinput="input"   value="{{username}}"   />
+      </view>
+      <view class="tui-line-cell tui-top28">
+        <tui-icon name="pwd" size="20" color='#5677fc'></tui-icon>
+        <input placeholder-class="phcolor" class="tui-input" name="password" placeholder="请输入密码"  type="password" />
+        </view>
+      <button form-type="submit" class="tui-btn-submit">
+         <tui-button tui-button-class="tui-btn-inner" >登录</tui-button>
+      </button>
+      <view class="tui-protocol" hover-class="opcity" hover-stay-time="150"  >没有账号？
+        <text class="tui-protocol-red" bindtap="protocol">立即注册</text>
+      </view>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,68 @@
+<view class="container">
+  <view class="tui-news-title">
+       {{item.name}}
+  </view>
+  <view class="tui-sub-info">
+    <view class="tui-sub-left">
+      <text class="tui-author"></text>
+      <text>   {{item.time}}</text>
+    </view>
+    <view class="tui-sub-right"></view>
+  </view>
+  <view class="tui-news-content">
+     
+ 
+      <text class="tui-article">
+       {{item.content}}
+    </text>
+    <image src="../../static/images/111.jpg" class="tui-article-pic" mode="widthFix"></image>
+    
+
+  </view>
+
+   
+
+  <view class="tui-cmt-title">评论</view>
+   <view class="tui-cmtbox">
+    <view class="tui-cmt-cell" wx:for="{{cmtList}}" wx:key="{{index}}">
+     
+      <view class="tui-cmt-detail">
+        <view class="tui-header-box">
+          <view class="tui-cmt-nickname">{{item.user}}</view>
+           
+        </view>
+        <view class="tui-cmt-content">
+          {{item.content}}
+        </view>
+        
+      
+      </view>
+    </view>
+
+  </view>
+
+  <view class="tui-operation">
+    <view class="tui-operation-left tui-col-7 tui-height-full tui-ptop-zero">
+      <view class="tui-btn-comment" bindtap="btnCmt">发表你的评论...</view>
+    </view>
+    <view class="tui-operation-right tui-right-flex tui-col-5">
+          <view class="tui-operation-item" bindtap="zan">
+        <tui-icon name="{{isZan?'agree-fill':'agree'}}" size="29" color="{{isZan?'#5677fc':'#444'}}"></tui-icon>
+      </view>
+      <view class="tui-operation-item" bindtap="collection">
+        <tui-icon name="{{isCollection?'star-fill':'star'}}" size="29" color="{{isCollection?'#5677fc':'#444'}}"></tui-icon>
+      </view>
+      <view class="tui-operation-item" hover-class="opcity" hover-stay-time="150">
+        <button open-type="share" class="tui-share-btn">
+          <tui-icon name="share" size="31" color='#444'></tui-icon>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!--加载loadding-->
+  <tui-loadmore visible="{{loadding}}" index="3" type="primary"></tui-loadmore>
+  <tui-nomore visible="{{!pullUpOn}}" bgcolor="#fff" text="没有更多评论"></tui-nomore>
+  <!--加载loadding-->
+  <view class="tui-safearea-bottom"></view>
+</view>

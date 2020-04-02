@@ -1,0 +1,9 @@
+{
+
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "tui-list-cell":"/components/list-cell/list-cell"
+  }
+}

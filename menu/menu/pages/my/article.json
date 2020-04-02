@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "发表文章",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundColorTop": "#fcfcfc",
+ 
+    "usingComponents": {
+      "tui-icon": "../../components/icon/icon",
+      "tui-button": "../../components/button/button",
+        "tui-upload": "../../../components/tui-upload/tui-upload"
+    }
+}

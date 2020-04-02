@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="tui-searchbox">
+    <view class="tui-search-input">
+      <icon type="search" size='13' color='#333'></icon>
+      <input confirm-type="search" placeholder="" auto-focus="{{true}}" placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input"/>
+       <icon type="clear" size='13' color='#bcbcbc' bindtap="cleanKey" hidden="{{!key}}"></icon>
+    </view>
+    <view class="tui-cancle" bindtap="search">搜索</view>
+  </view>
+
+   
+ 
+</view>

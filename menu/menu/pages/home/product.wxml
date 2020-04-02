@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="tui-searchbox">
+    <view class="tui-search-input">
+      <icon type="search" size='13' color='#333'></icon>
+      <input confirm-type="search" placeholder="" auto-focus="{{true}}" placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input"/>
+       <icon type="clear" size='13' color='#bcbcbc' bindtap="cleanKey" hidden="{{!key}}"></icon>
+    </view>
+    <view class="tui-cancle" bindtap="search">搜索</view>
+  </view>
+  <view class="product-list">
+    <!--商品列表-->
+    <view class="pro-item" bindtap="detail"  data-id="{{item.id}}" wx:for="{{productList}}" wx:key="{{index}}">
+      <image src="{{item.img}}" class="pro-img" mode="widthFix" />
+      <view class="pro-content">
+        <view class="pro-tit">{{item.name}}</view>
+       
+      </view>
+    </view>
+    <!--商品列表-->
+  </view>
+  <!--加载loadding-->
+  <tui-loadmore visible="{{loadding}}" index="3" type="primary"></tui-loadmore>
+  <tui-nomore visible="{{!pullUpOn}}"></tui-nomore>
+  <!--加载loadding-->
+</view>

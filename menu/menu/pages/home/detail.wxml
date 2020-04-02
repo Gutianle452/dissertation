@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="tui-news-title">
+    {{item.name}}
+  </view>
+  <view class="tui-sub-info">
+    <view class="tui-sub-left">
+      <text class="tui-author"></text>
+      <text>    {{item.time}}</text>
+    </view>
+    <view class="tui-sub-right"></view>
+  </view>
+  <view class="tui-news-content">
+     
+    <view class="tui-article">
+         {{item.content}}
+    </view>
+    <image src="{{item.img}}" class="tui-article-pic" mode="widthFix"></image>
+    
+
+  </view>
+
+   
+
+  
+ 
+
+   
+ 
+</view>

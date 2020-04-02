@@ -1,0 +1,26 @@
+<view class="container">
+ 
+  <view >
+   
+    <!--商品列表-->
+    <block wx:for="{{productList}}" wx:key="{{index}}">
+   <tui-cell bind:click="detail" tui-cell-class="tui-msg">
+      <view class="tui-msg-box">
+        <image src="{{item.img}}" class="tui-msg-pic" mode="widthFix"></image>
+        <view class="tui-msg-item">
+          <view class="tui-msg-name">菜品：{{item.name}}</view>
+          <view class="tui-msg-content">评论内容：{{item.content}}</view>
+        </view>
+      </view>
+      <view class="tui-msg-right">
+        <view class="tui-msg-time">{{item.time}}</view>
+     </view>
+    </tui-cell>
+    <!--商品列表-->
+       </block>
+  </view>
+  <!--加载loadding-->
+  <tui-loadmore visible="{{loadding}}" index="3" type="primary"></tui-loadmore>
+  <tui-nomore visible="{{!pullUpOn}}"></tui-nomore>
+  <!--加载loadding-->
+</view>
